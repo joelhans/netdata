@@ -17,6 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Link Checker
-        uses: peter-evans/link-checker@v1
+        uses: peter-evans/link-checker@v1.2.2
         with:
-          args: -v -r -d  ${{ env.GITHUB_WORKSPACE }} *
+          args: -v -r -d  ${{ env.GITHUB_WORKSPACE }} *.md
