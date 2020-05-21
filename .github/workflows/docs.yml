@@ -16,10 +16,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run link check
-        uses: gaurav-nelson/github-action-markdown-link-check@v1
+      - name: Link Checker
+        uses: peter-evans/link-checker@v1
         with:
-          use-quiet-mode: 'yes'
-          use-verbose-mode: 'yes'
-          check-modified-files-only: 'yes'
-          config-file: '.github/mlc_config.json'
+          args: -v -r -d  ${{ env.GITHUB_WORKSPACE }} *
