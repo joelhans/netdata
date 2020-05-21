@@ -49,6 +49,9 @@
     "walkdir": "^0.4.1",
     "xml2js": "^0.4.22"
   },
+  "remarkConfig": {
+    "plugins": ["remark-preset-lint-recommended"]
+  },
   "scripts": {
     "lint-md": "remark .",
     "lint-md-path": "remark",
