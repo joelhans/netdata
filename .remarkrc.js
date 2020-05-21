@@ -16,14 +16,6 @@ exports.settings = {
   incrementListMarker: true
 };
 
-const remarkPresetLintMarkdownStyleGuide = {
-  plugins: require("remark-preset-lint-markdown-style-guide").plugins.filter(
-    function(elem) {
-      return elem != require("remark-lint-no-duplicate-headings");
-    }
-  )
-};
-
 exports.plugins = [
   require("remark-preset-lint-consistent"),
   require("remark-preset-lint-recommended"),
@@ -39,73 +31,6 @@ exports.plugins = [
   [require("remark-lint-unordered-list-marker-style"), "-"],
   [require("remark-lint-ordered-list-marker-style"), "."],
   [require("remark-lint-ordered-list-marker-value"), "ordered"],
-  /*[
-    require("remark-lint-write-good"),
-    [
-      "warn",
-      {
-        passive: false,
-        illusion: true,
-        so: true,
-        thereIs: true,
-        weasel: true,
-        adverb: true,
-        tooWordy: true,
-        cliches: true,
-        eprime: false
-      }
-    ]
-  ],*/
   require("remark-validate-links"),
   require("remark-frontmatter"),
-  /*[
-    require("remark-retext"),
-    require("unified")().use({
-      plugins: [
-        require("retext-english"),
-        require("retext-syntax-urls"),
-        [
-          require("retext-spell"),
-          {
-            ignoreLiteral: true,
-            dictionary: require("dictionary-en-us"),
-            ...personalDictionary
-          }
-        ],
-        [
-          require("retext-sentence-spacing"),
-          {
-            preferred: 1
-          }
-        ],
-        require("retext-repeated-words"),
-        require("retext-usage"),
-        require("retext-indefinite-article"),
-        require("retext-redundant-acronyms"),
-        [
-          require("retext-contractions"),
-          {
-            straight: true,
-            allowLiteral: true
-          }
-        ],
-        require("retext-diacritics"),
-        [
-          require("retext-quotes"),
-          {
-            preferred: "straight"
-          }
-        ],
-        require("retext-equality"),
-        require("retext-passive"),
-        require("retext-profanities"),
-        [
-          require("retext-readability"),
-          {
-            age: 20
-          }
-        ]
-      ]
-    })
-  ]*/
 ];
