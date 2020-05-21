@@ -8,6 +8,8 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/getting-sta
 
 # Get started guide
 
+This is a fake edit.
+
 Thanks for trying the Netdata Agent! In this getting started guide, we'll quickly walk you through the first steps you
 should take after installing the Agent.
 
