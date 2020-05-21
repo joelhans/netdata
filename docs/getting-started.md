@@ -12,6 +12,8 @@ This is a fake edit.
 
 Check out [the export test file](/docs/export/README.md).
 
+This is anothre fake edit.
+
 Thanks for trying the Netdata Agent! In this getting started guide, we'll quickly walk you through the first steps you
 should take after installing the Agent.
 
