@@ -1,6 +1,6 @@
 <!--
-title: "Send notifications to StackPulse"
-description: "Send alerts to your StackPulse Netdata integration any time an anomaly or performance issue strikes a node in your infrastructure."
+title: "Send alarm notifications to StackPulse"
+description: "Send warning and critical alarm notifications to StackPulse to help you monitor the health and performance of your nodes and infrastructure."
 sidebar_label: "StackPulse"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md
 -->

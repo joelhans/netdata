@@ -1,5 +1,7 @@
 <!--
-title: "Messagebird"
+title: "Send alarm notifications to Messagebird"
+description: "Send warning and critical alarm notifications to Messagebird to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Messagebird"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/messagebird/README.md
 -->
 

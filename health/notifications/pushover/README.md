@@ -1,5 +1,7 @@
 <!--
-title: "PushOver"
+title: "Send alarm notifications to PushOver"
+description: "Send warning and critical alarm notifications to PushOver to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "PushOver"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/pushover/README.md
 -->
 

@@ -1,5 +1,6 @@
 <!--
 title: "cgroups.plugin"
+description: "Netdata automatically monitors the CPU, RAM, disk, and network utilization of every container. Works with Docker, LXC/LXD, systemd, libvirt, and more."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/README.md
 -->
 

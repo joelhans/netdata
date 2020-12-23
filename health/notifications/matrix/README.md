@@ -1,6 +1,6 @@
 <!--
-title: "Send Netdata notifications to Matrix network rooms"
-description: "Stay aware of warning or critical anomalies by sending health alarms to Matrix network rooms with Netdata's health monitoring watchdog."
+title: "Send alarm notifications to Matrix network rooms"
+description: "Send warning and critical alarm notifications to Matrix network rooms to help you monitor the health and performance of your nodes and infrastructure."
 sidebar_label: "Matrix"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/matrix/README.md
 -->

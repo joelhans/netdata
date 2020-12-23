@@ -1,9 +1,11 @@
 <!--
-title: "Discordapp.com"
+title: "Send alarm notifications to Discord"
+description: "Send warning and critical alarm notifications to Discord to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Discord"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/discord/README.md
 -->
 
-# Discordapp.com
+# Discord
 
 This is what you will get:
 

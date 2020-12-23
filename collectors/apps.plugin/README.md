@@ -1,5 +1,6 @@
 <!--
 title: "apps.plugin"
+description: "Netdata monitors every process, user, or user group and visualizes CPU, RAM, disk, and networking utilization into dozens of interactive, real-time charts."
 sidebar_label: "Application monitoring (apps.plugin)"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/apps.plugin/README.md
 -->

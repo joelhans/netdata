@@ -1,5 +1,7 @@
 <!--
-title: "Flock"
+title: "Send alarm notifications to Flock"
+description: "Send warning and critical alarm notifications to Flock to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Flock"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/flock/README.md
 -->
 

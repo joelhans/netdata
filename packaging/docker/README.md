@@ -1,6 +1,6 @@
 <!--
 title: "Install Netdata with Docker"
-date: 2020-04-23
+description: "Install the Netdata Agent into a Docker container to quickly analyze a node, its applications, and other running containers without affecting the system."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/docker/README.md
 -->
 

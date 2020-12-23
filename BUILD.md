@@ -1,5 +1,6 @@
 <!--
 title: "The build system"
+description: "Advanced users can use the Netdata Agent build system to work on development projects, test feature flags, or debug complex issues with underying code."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/BUILD.md
 -->
 

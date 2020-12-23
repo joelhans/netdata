@@ -1,5 +1,7 @@
 <!--
-title: "IRC"
+title: "Send alarm notifications to IRC"
+description: "Send warning and critical alarm notifications to IRC channels to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "IRC"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/irc/README.md
 -->
 

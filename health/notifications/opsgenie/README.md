@@ -1,6 +1,6 @@
 <!--
-title: "Send notifications to Opsgenie"
-description: "Send alerts to your Opsgenie incident response account any time an anomaly or performance issue strikes a node in your infrastructure."
+title: "Send alarm notifications to Opsgenie"
+description: "Send warning and critical alarm notifications to Opsgenie to help you monitor the health and performance of your nodes and infrastructure."
 sidebar_label: "Opsgenie"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/opsgenie/README.md
 -->

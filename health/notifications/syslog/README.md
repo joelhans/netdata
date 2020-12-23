@@ -1,5 +1,7 @@
 <!--
-title: "Syslog"
+title: "Send alarm notifications to Syslog"
+description: "Send warning and critical alarm notifications to syslog to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Syslog"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/syslog/README.md
 -->
 

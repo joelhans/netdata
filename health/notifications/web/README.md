@@ -1,11 +1,13 @@
 <!--
-title: "Dashboard"
+title: "See alarm notifications on the Netdata Agent dashboard"
+description: "See warning and critical alarm notifications in the local Netdata Agent dashboard to help you monitor the health and performance of your node."
+sidebar_label: "Local Agent dashboard"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/web/README.md
 -->
 
 # Dashboard
 
-The Netdata dashboard shows HTML notifications, when it is open.
+The Netdata dashboard shows HTML notifications when it is open.
 
 Such web notifications look like this:
 ![image](https://cloud.githubusercontent.com/assets/2662304/18407279/82bac6a6-7714-11e6-847e-c2e84eeacbfb.png)

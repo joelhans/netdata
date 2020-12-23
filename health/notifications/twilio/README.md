@@ -1,5 +1,7 @@
 <!--
-title: "Twilio"
+title: "Send alarm notifications to Twilio"
+description: "Send warning and critical alarm notifications to Twilio to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Twilio"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/twilio/README.md
 -->
 

@@ -1,5 +1,7 @@
 <!--
-title: "Email"
+title: "Send alarm notifications to email"
+description: "Send warning and critical alarm notifications to any email address to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Email"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/email/README.md
 -->
 

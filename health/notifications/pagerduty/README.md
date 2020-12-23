@@ -1,5 +1,7 @@
 <!--
-title: "PagerDuty"
+title: "Send alarm notifications to PagerDuty"
+description: "Send warning and critical alarm notifications to PagerDuty to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "PagerDuty"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/pagerduty/README.md
 -->
 

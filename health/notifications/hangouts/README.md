@@ -1,6 +1,6 @@
 <!--
-title: "Send notifications to Google Hangouts"
-description: "Send alerts to Send notifications to Google Hangouts any time an anomaly or performance issue strikes a node in your infrastructure."
+title: "Send alarm notifications to Google Hangouts"
+description: "Send warning and critical alarm notifications to Google Hangouts to help you monitor the health and performance of your nodes and infrastructure."
 sidebar_label: "Google Hangouts"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/hangouts/README.md
 -->

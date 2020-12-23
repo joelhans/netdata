@@ -1,6 +1,7 @@
 <!--
-title: "Amazon SNS"
-description: "hello"
+title: "Send alarm notifications to Amazon SNS"
+description: "Send warning and critical alarm notifications to Amazon SNS to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Amazon SNS"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/awssns/README.md
 -->
 

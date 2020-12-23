@@ -1,5 +1,7 @@
 <!--
-title: "Kavenegar"
+title: "Send alarm notifications to Kavenegar"
+description: "Send warning and critical alarm notifications to Kavenegar to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Kavenegar"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/kavenegar/README.md
 -->
 

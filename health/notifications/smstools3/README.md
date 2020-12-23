@@ -1,5 +1,7 @@
 <!--
-title: "SMS Server Tools 3"
+title: "Send alarm notifications to SMS Server Tools 3"
+description: "Send warning and critical alarm notifications to mobile phones to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "SMS Server Tools 3"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/smstools3/README.md
 -->
 

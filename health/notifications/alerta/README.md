@@ -1,10 +1,11 @@
 <!--
-title: "alerta.io"
-description: "Send alarm notifications to Alerta to see the latest health status updates from multiple nodes in a single interface."
+title: "Send alarm notifications to Alerta"
+description: "Send warning and critical alarm notifications to Alerta to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Alerta"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/alerta/README.md
 -->
 
-# alerta.io
+# Alerta
 
 The [Alerta](https://alerta.io) monitoring system is a tool used to
 consolidate and de-duplicate alerts from multiple sources for quick

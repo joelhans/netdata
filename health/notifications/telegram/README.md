@@ -1,5 +1,7 @@
 <!--
-title: "Telegram"
+title: "Send alarm notifications to Telegram"
+description: "Send warning and critical alarm notifications to Telegram to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Telegram"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/telegram/README.md
 -->
 

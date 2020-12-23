@@ -1,5 +1,6 @@
 <!--
 title: "Contributing"
+description: "We rely on community contributions and user feedback to continue providing the best monitoring solution out there, and there are many ways to get involved."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/CONTRIBUTING.md
 sidebar_label: "Contributing handbook"
 -->

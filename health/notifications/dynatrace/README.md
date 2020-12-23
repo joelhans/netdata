@@ -1,5 +1,7 @@
 <!--
-title: "Dynatrace"
+title: "Send alarm notifications to Dynatrace"
+description: "Send warning and critical alarm notifications to Dynatrace to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Dynatrace"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/dynatrace/README.md
 -->
 

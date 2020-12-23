@@ -1,5 +1,7 @@
 <!--
-title: "Slack"
+title: "Send alarm notifications to Slack"
+description: "Send warning and critical alarm notifications to Slack to help you monitor the health and performance of your nodes and infrastructure."
+sidebar_label: "Slack"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/slack/README.md
 -->
 
