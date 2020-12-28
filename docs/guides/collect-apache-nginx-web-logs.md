@@ -1,5 +1,6 @@
 <!--
 title: "Monitor Nginx or Apache web server log files with Netdata"
+description: "Learn how to monitor web server logs with per-second granularity, robust visualizations, and support for parsing custom log files."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md
 -->
 

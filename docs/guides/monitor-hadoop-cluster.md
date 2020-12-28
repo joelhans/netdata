@@ -1,5 +1,6 @@
 <!--
 title: "Monitor a Hadoop cluster with Netdata"
+description: "Collect dozens of per-second Hadoop metrics from HDFS and Zookeeper, plus preconfigured visualizations and alarms that require no queries or organization."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md
 -->
 

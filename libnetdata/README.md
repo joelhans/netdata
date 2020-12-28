@@ -1,5 +1,6 @@
 <!--
 title: "libnetdata"
+description: "libnetdata is a collection of library code used by the various C programs running inside of the open-source Netdata Agent."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/libnetdata/README.md
 -->
 

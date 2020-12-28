@@ -1,5 +1,6 @@
 <!--
 title: "Security design"
+description: "The security design of the open-source Netdata Agent ensures your data and systems are read-only and safe, while also providing immediate value to users."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-security.md
 -->
 

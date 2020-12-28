@@ -1,9 +1,10 @@
 <!--
-title: "Installation guide"
+title: "Installation"
+description: "The open-source Netdata Agent runs on physical/virtual servers, containers, in Docker and Kubernetes, with many installation options for different needs."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
 -->
 
-# Installation guide
+# Installation
 
 Netdata is a monitoring agent designed to run on all your systems: physical and virtual servers, containers, even
 IoT/edge devices. Netdata runs on Linux, FreeBSD, macOS, Kubernetes, Docker, and all their derivatives.

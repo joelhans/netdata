@@ -1,6 +1,6 @@
 <!--
 title: "Monitor Unbound DNS servers with Netdata"
-date: 2020-03-31
+description: "Collect dozens of per-second metrics from any number of Unbound DNS server instances and visualize everything on interactive dashboards."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md
 -->
 

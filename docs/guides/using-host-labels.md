@@ -1,5 +1,6 @@
 <!--
 title: "Use host labels to organize systems, metrics, and alarms"
+description: "Add labels to metrics collected from individual nodes in a complex infrastructure to organize the metrics you export, stream, or analyze with the API."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md
 -->
 

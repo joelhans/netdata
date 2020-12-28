@@ -1,5 +1,6 @@
 <!--
 title: "Adaptive Re-sortable List (ARL)"
+description: "This Netdata Agent library reads a series of name-value pairs as quickly as possible. Used to efficiently process /proc files on Linux systems."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md
 -->
 

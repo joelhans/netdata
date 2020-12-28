@@ -1,5 +1,6 @@
 <!--
 title: "Install Netdata on FreeNAS"
+description: "The Netdata Agent is preinstalled on many FreeNAS versions, but enabling and starting the service requires running a single command from the FreeNAS CLI."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md
 -->
 

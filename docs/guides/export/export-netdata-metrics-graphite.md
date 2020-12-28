@@ -1,7 +1,8 @@
 <!--
 title: Export and visualize Netdata metrics in Graphite 
-description: "Use Netdata to collect and export thousands of metrics to Graphite for long-term storage or further analysis."
+description: "Follow this step-by-step guide to collect per-second metrics with the Netdata Agent and export them to Graphite for long-term storage or further analysis."
 image: /img/seo/guides/export/export-netdata-metrics-graphite.png
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/monitor/export/export-netdata-metrics-graphite.md
 -->
 
 # Export and visualize Netdata metrics in Graphite

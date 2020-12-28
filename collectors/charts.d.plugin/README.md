@@ -1,5 +1,6 @@
 <!--
 title: "charts.d.plugin"
+description: "charts.d.plugin is an external plugin for the Netdata Agent, which manages various data collectors written in Bash."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md
 -->
 

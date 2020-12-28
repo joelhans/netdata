@@ -1,5 +1,6 @@
 <!--
 title: "Netdata, Prometheus, Grafana stack"
+description: "Learn how to export Netdata metrics to Prometheus and Grafana with a user-contributed guide that walks you through all the configuration steps."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/WALKTHROUGH.md
 -->
 

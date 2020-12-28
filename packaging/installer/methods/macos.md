@@ -1,5 +1,6 @@
 <!--
 title: "Install Netdata on macOS"
+description: "The Netdata Agent runs on all macOS system to collect per-second system, container, and application metrics with 300+ data collectors."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos.md
 -->
 

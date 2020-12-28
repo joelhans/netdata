@@ -1,5 +1,6 @@
 <!--
 title: "Access point monitoring with Netdata"
+description: "The ap collector visualizes metrics related to access points using iw, such as rx/tx bytes/packets, signal strength, expected throughput, and more."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/ap/README.md
 sidebar_label: "Access points"
 -->

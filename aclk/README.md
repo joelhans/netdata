@@ -1,6 +1,6 @@
 <!--
 title: "Agent-Cloud link (ACLK)"
-description: "The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud."
+description: "The Agent-Cloud link (ACLK) is the mechanism responsible for securely connecting a Netdata Agent to Netdata Cloud for on-demand streaming of metrics data."
 date: 2020-05-11
 custom_edit_url: https://github.com/netdata/netdata/edit/master/aclk/README.md
 -->

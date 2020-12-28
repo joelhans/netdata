@@ -1,5 +1,6 @@
 <!--
 title: "APC UPS monitoring with Netdata"
+description: "The apcupsd collector monitors any number of APC UPS models and retrieves status information using the apcaccess tool."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/apcupsd/README.md
 sidebar_label: "APC UPS"
 -->

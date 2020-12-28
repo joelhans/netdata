@@ -1,5 +1,6 @@
 <!--
 title: "Health monitoring"
+description: "The Netdata Agent is a health watchdog for the health and performance of your systems, services, and applications, with hundreds of preconfigured alarms."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/README.md
 -->
 

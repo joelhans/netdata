@@ -1,5 +1,6 @@
 <!--
 title: "Install Netdata on Alpine 3.x"
+description: "The Netdata Agent is compatible with Alpine Linux 3.x to provide per-second monitoring and visualizations for systems and containers."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/alpine.md
 -->
 

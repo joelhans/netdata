@@ -1,5 +1,6 @@
 <!--
 title: "Monitor CockroachDB metrics with Netdata"
+description: "Use the open-source Netdata Agent to collect, visualize, and monitor any number of CockroachDB instances, with 50+ metrics at per-second granularity."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md
 -->
 
