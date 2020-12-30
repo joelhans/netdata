@@ -1,6 +1,6 @@
 <!--
 title: "Writing metrics to TimescaleDB"
-description: "Send Netdata metrics to TimescaleDB for long-term archiving and further analysis."
+description: "The Netdata Agent can archive metrics directly to a TimescaleDB instance with an open-source 'relay' application developed by a member of the community."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/TIMESCALE.md
 sidebar_label: Writing metrics to TimescaleDB
 -->

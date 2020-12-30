@@ -1,5 +1,6 @@
 <!--
-title: "Using Netdata with AWS Kinesis Data Streams"
+title: "Using Netdata with AWS Kinesis Data Streams (deprecated)"
+description: "Archive your Agent's metrics to AWS Kinesis Data Streams for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/aws_kinesis/README.md
 -->
 

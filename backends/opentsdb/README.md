@@ -1,5 +1,6 @@
 <!--
-title: "OpenTSDB with HTTP"
+title: "OpenTSDB with HTTP (deprecated)"
+description: "Archive your Netdata Agent's metrics to an external OpenTSDB database for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/opentsdb/README.md
 -->
 

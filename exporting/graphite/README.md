@@ -1,6 +1,6 @@
 <!--
 title: "Export metrics to Graphite providers"
-description: "Archive your Agent's metrics to a any Graphite database provider for long-term storage, further analysis, or correlation with data from other sources."
+description: "Archive your Netdata Agent metrics to any Graphite database provider for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/graphite/README.md
 sidebar_label: Graphite
 -->

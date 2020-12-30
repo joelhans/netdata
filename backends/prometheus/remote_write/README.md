@@ -1,5 +1,5 @@
 <!--
-title: "Prometheus remote write backend"
+title: "Prometheus remote write backend (deprecated)"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/prometheus/remote_write/README.md
 -->
 

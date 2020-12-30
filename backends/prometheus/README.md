@@ -1,5 +1,6 @@
 <!--
-title: "Using Netdata with Prometheus"
+title: "Using Netdata with Prometheus (deprecated)"
+description: "The Netdata Agent can archive metrics directly to Prometheus for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/prometheus/README.md
 -->
 

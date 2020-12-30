@@ -1,5 +1,6 @@
 <!--
-title: "MongoDB backend"
+title: "MongoDB backend (deprecated)"
+description: "Archive your Netdata Agent's metrics to a MongoDB database for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/mongodb/README.md
 -->
 

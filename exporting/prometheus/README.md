@@ -1,6 +1,6 @@
 <!--
 title: "Export metrics to Prometheus"
-description: "Export Netdata metrics to Prometheus for archiving and further analysis."
+description: "The Netdata Agent can archive metrics directly to Prometheus for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/prometheus/README.md
 sidebar_label: Using Netdata with Prometheus
 -->

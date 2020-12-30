@@ -1,5 +1,6 @@
 <!--
 title: "fping.plugin"
+description: "Use the Netdata Agent to monitor latency, packet loss, and uptime from any number of network endpoints with per-second granularity and rich visualizations."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/fping.plugin/README.md
 -->
 

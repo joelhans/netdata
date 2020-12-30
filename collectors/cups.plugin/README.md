@@ -1,5 +1,6 @@
 <!--
 title: "cups.plugin"
+description: "Netdata's CUPS collector gathers metrics from a local running CUPS daemon and visualizes destinations, job numbers, job sizes, and more."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md
 -->
 

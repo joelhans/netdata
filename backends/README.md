@@ -1,5 +1,5 @@
 <!--
-title: "Metrics long term archiving"
+title: "Metrics long term archiving (deprecated)"
 description: "Deprecated in favor of the exporting engine. The backends system could archive Netdata's metrics to a single external endpoint."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/README.md
 -->

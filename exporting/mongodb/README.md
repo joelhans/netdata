@@ -1,6 +1,6 @@
 <!--
 title: "Export metrics to MongoDB"
-description: "Archive your Agent's metrics to a MongoDB database for long-term storage, further analysis, or correlation with data from other sources."
+description: "Archive your Netdata Agent's metrics to a MongoDB database for long-term storage, further analysis, or correlation with data from other sources."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/mongodb/README.md
 sidebar_label: MongoDB
 -->
