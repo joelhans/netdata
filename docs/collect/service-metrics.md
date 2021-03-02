@@ -1,25 +1,26 @@
 <!--
-title: "Collect application metrics with Netdata"
-sidebar_label: "Application metrics"
-description: "Monitor and troubleshoot every application on your infrastructure with per-second metrics, zero configuration, and meaningful charts."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.md
+title: "Collect service metrics with Netdata"
+sidebar_label: "Service metrics"
+description: "Monitor and troubleshoot every mission-critical service on your infrastructure with per-second metrics, zero configuration, and meaningful charts."
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/service-metrics.md
 -->
 
-# Collect application metrics with Netdata
+# Collect service metrics with Netdata
 
-Netdata instantly collects per-second metrics from many different types of applications running on your systems, such as
-web servers, databases, message brokers, email servers, search platforms, and much more. Metrics collectors are
-pre-installed with every Netdata Agent and usually require zero configuration. Netdata also collects and visualizes
-resource utilization per application on Linux systems using `apps.plugin`.
+Netdata monitors services that make up an application "stack," such as web servers, databases, message brokers, email
+servers, search platforms, and much more.
+
+Data collectors are pre-installed with every Netdata Agent and usually require zero configuration. Netdata also collects
+and visualizes resource utilization per service/process on Linux systems using `apps.plugin`.
 
 [**apps.plugin**](/collectors/apps.plugin/README.md) looks at the Linux process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. By reading the process tree, Netdata
-shows CPU, disk, networking, processes, and eBPF for every application or Linux user. Unlike `top` or `ps fax`, Netdata
-adds a layer of meaningful visualization on top of the process tree metrics, such as grouping applications into useful
-dimensions, and then creates per-application charts under the **Applications** section of a Netdata dashboard, per-user
-charts under **Users**, and per-user group charts under **User Groups**.
+shows CPU, disk, networking, processes, and eBPF for every service/process or Linux user. Unlike `top` or `ps fax`,
+Netdata adds a layer of meaningful visualization on top of the process tree metrics, such as grouping services into
+useful dimensions, and then creates per-service charts under the **Applications** section of a Netdata dashboard,
+per-user charts under **Users**, and per-user group charts under **User Groups**.
 
-Our most popular application collectors:
+Our most popular service collectors:
 
 -   [Prometheus endpoints](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/prometheus): Gathers
     metrics from one or more Prometheus endpoints that use the OpenMetrics exposition format. Autodetects more than 600
@@ -42,13 +43,13 @@ Our most popular application collectors:
     summary and processes health metrics by scraping the status page (`/status?full`).
 
 Our [supported collectors list](/collectors/COLLECTORS.md#service-and-application-collectors) shows all Netdata's
-application metrics collectors, including those for containers/k8s clusters.
+service metrics collectors, including those for containers/k8s clusters.
 
-## Collect metrics from applications running on Windows
+## Collect metrics from services running on Windows
 
-Netdata is fully capable of collecting and visualizing metrics from applications running on Windows systems. The only
-caveat is that you must [install the Agent](/docs/get/README.md) on a separate system or a compatible VM because there
-is no native Windows version of the Netdata Agent.
+Netdata is fully capable of collecting and visualizing metrics from services running on Windows systems. The only caveat
+is that you must [install the Agent](/docs/get/README.md) on a separate system or a compatible VM because there is no
+native Windows version of the Netdata Agent.
 
 Once you have the Agent running on that separate system, you can follow the [enable and configure
 doc](/docs/collect/enable-configure.md) to tell the collector to look for exposed metrics on the Windows system's IP
@@ -64,17 +65,13 @@ jobs:
     dsn: root:my-secret-pw@tcp(203.0.113.0:3306)/
 ```
 
-This same logic applies to any application in our [supported collectors
+This same logic applies to any service in our [supported collectors
 list](/collectors/COLLECTORS.md#service-and-application-collectors) that can run on Windows.
 
 ## What's next?
 
 If you haven't yet seen the [supported collectors list](/collectors/COLLECTORS.md) give it a once-over for any
-additional applications you may want to monitor using Netdata's native collectors, or the [generic Prometheus
+additional services you may want to monitor using Netdata's native collectors, or the [generic Prometheus
 collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/prometheus).
 
-Collecting all the available metrics on your nodes, and across your entire infrastructure, is just one piece of the
-puzzle. Next, learn more about Netdata's famous real-time visualizations by [viewing all your nodes at a
-glance](/docs/visualize/view-all-nodes.md).
-
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcollect%2Fapplication-metrics&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcollect%2Fservice-metrics&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)

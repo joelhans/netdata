@@ -43,8 +43,8 @@ Generally, Netdata's collectors can be grouped into three types:
     Every metric exposed by `/proc`, `/sys`, and other Linux kernel sources.
 -   [Containers](/docs/collect/container-metrics.md): Gather metrics from container agents, like `dockerd` or `kubectl`,
     along with the resource usage of containers and the applications they run.
--   [Applications](/docs/collect/application-metrics.md): Collect per-second metrics from web servers, databases, logs,
-    message brokers, APM tools, email servers, and much more.
+-   [Services](/docs/collect/service-metrics.md): Collect per-second metrics from web servers, databases, logs, message
+    brokers, APM tools, email servers, and much more.
 
 ## Collector architecture and terminology
 

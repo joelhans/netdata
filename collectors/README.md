@@ -1,54 +1,189 @@
 <!--
----
-title: "Collecting metrics"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/README.md
----
+title: "Data collectors reference"
+description: ""
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md
 -->
 
-# Collecting metrics
+# Data collector reference
 
-Netdata can collect metrics from hundreds of different sources, be they internal data created by the system itself, or
-external data created by services or applications. To see _all_ of the sources Netdata collects from, view our [list of
-supported collectors](/collectors/COLLECTORS.md), and then view our [quickstart guide](/collectors/QUICKSTART.md) to get
-up-and-running.
+Welcome to the data collector reference.
 
-There are two essential points to understand about how collecting metrics works in Netdata:
+This document explains what data collectors are, their architecture within the Netdata Agent, explains how to enable and
+troubleshoot them, and provides links to other collector resources.
 
--   All collectors are **installed by default** with every installation of Netdata. You do not need to install
-    collectors manually to collect metrics from new sources.
--   Upon startup, Netdata will **auto-detect** any application or service that has a
-    [collector](/collectors/COLLECTORS.md), as long as both the collector and the app/service are configured correctly.
+For quick explanations into what kinds of metrics Netdata can collect, along with documentation for configuring data
+collectors, see the following resources:
 
-Most users will want to enable a new Netdata collector for their app/service. For those details, see our [quickstart
-guide](/collectors/QUICKSTART.md).
+- [How Netdata's metrics collectors work](/docs/collect/how-collectors-work.md)
+- [Enable or configure a collector](/docs/collect/enable-configure.md)
+- [Collect system metrics with Netdata](/docs/collect/system-metrics.md)
+- [Collect container metrics with Netdata](/docs/collect/container-metrics.md)
+- [Collect service metrics with Netdata](/docs/collect/service-metrics.md)
 
-## Take your next steps with collectors
+## Netdata's data collector architecture
 
-[Collectors quickstart](/collectors/QUICKSTART.md)
+Netdata has an intricate system for organizing and managing its data collectors. Data **collectors** are the
+processes/programs that actually gather metrics from various sources. Collectors are organized by **plugins**, which
+help manage all the independent processes in a variety of programming languages based on their purpose and performance
+requirements. **Modules** are a type of collector, used primarily to connect to external applications, such as an Nginx
+web server or MySQL database, among many others.
 
-[Supported collectors list](/collectors/COLLECTORS.md)
+For most users, enabling individual collectors for the application/service you're interested in is far more important
+than knowing which plugin it uses. See our [collectors list](/collectors/COLLECTORS.md) to see whether your favorite
+app/service has a collector, and then read the [collectors quickstart](/collectors/QUICKSTART.md) and the documentation
+for that specific collector to figure out how to enable it.
 
-[Collectors configuration reference](/collectors/REFERENCE.md)
+There are three types of plugins:
 
-## Guides
+-   **Internal** plugins organize collectors that gather metrics from `/proc`, `/sys` and other Linux kernel sources.
+    They are written in `C`, and run as threads within the Netdata daemon.
+-   **External** plugins organize collectors that gather metrics from external processes, such as a MySQL database or
+    Nginx web server. They can be written in any language, and the `netdata` daemon spawns them as long-running
+    independent processes. They communicate with the daemon via pipes.
+-   **Plugin orchestrators**, which are external plugins that instead support a number of **modules**. Modules are a
+    type of collector. We have a few plugin orchestrators available for those who want to develop their own collectors,
+    but focus most of our efforts on the [Go plugin](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/).
 
-[Monitor Nginx or Apache web server log files with Netdata](/docs/guides/collect-apache-nginx-web-logs.md)
+## Enable, configure, and disable modules
 
-[Monitor CockroadchDB metrics with Netdata](/docs/guides/monitor-cockroachdb.md)
+Most collector modules come with **auto-detection**, configured to work out-of-the-box on popular operating systems with
+the default settings.
 
-[Monitor Unbound DNS servers with Netdata](/docs/guides/collect-unbound-metrics.md)
+However, there are cases that auto-detection fails. Usually, the reason is that the applications to be monitored do not
+allow Netdata to connect. In most of the cases, allowing the user `netdata` from `localhost` to connect and collect
+metrics, will automatically enable data collection for the application in question (it will require a Netdata restart).
 
-[Monitor a Hadoop cluster with Netdata](/docs/guides/monitor-hadoop-cluster.md)
+View our [collectors quickstart](/collectors/QUICKSTART.md) for explict details on enabling and configuring collector modules.
 
-## Related features
+## Troubleshoot a collector
 
-**[Dashboards](/web/README.md)**: Vizualize your newly-collect metrics in real-time using Netdata's [built-in
-dashboard](/web/gui/README.md). 
+First, navigate to your plugins directory, which is usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case
+on your system, open `netdata.conf` and look for the setting `plugins directory`. Once you're in the plugins directory,
+switch to the `netdata` user.
 
-**[Backends](/backends/README.md)**: Extend our built-in [database engine](/database/engine/README.md), which supports
-long-term metrics storage, by archiving metrics to like Graphite, Prometheus, MongoDB, TimescaleDB, and more.
+```bash
+cd /usr/libexec/netdata/plugins.d/
+sudo su -s /bin/bash netdata
+```
 
-**[Exporting](/exporting/README.md)**: An experimental refactoring of our backends system with a modular system and
-support for exporting metrics to multiple systems simultaneously.
+The next step is based on the collector's orchestrator. You can figure out which orchestrator the collector uses by 
+
+```bash
+# Go orchestrator (go.d.plugin)
+./go.d.plugin -d -m <MODULE_NAME>
+
+# Python orchestrator (python.d.plugin)
+./python.d.plugin <MODULE_NAME> debug trace
+
+# Node orchestrator (node.d.plugin)
+./node.d.plugin debug 1 <MODULE_NAME>
+
+# Bash orchestrator (bash.d.plugin)
+./charts.d.plugin debug 1 <MODULE_NAME>
+```
+
+The output from the relevant command will provide valuable troubleshooting information. If you can't figure out how to
+enable the collector using the details from this output, feel free to [create an issue on our
+GitHub](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md) to get some
+help from our collectors experts.
+
+## Enable and disable plugins
+
+You can enable or disable individual plugins by opening `netdata.conf` and scrolling down to the `[plugins]` section.
+This section features a list of Netdata's plugins, with a boolean setting to enable or disable them. The exception is
+`statsd.plugin`, which has its own `[statsd]` section. Your `[plugins]` section should look similar to this:
+
+```conf
+[plugins]
+	# PATH environment variable = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/var/lib/snapd/snap/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+	# PYTHONPATH environment variable = 
+	# proc = yes
+	# diskspace = yes
+	# cgroups = yes
+	# tc = yes
+	# idlejitter = yes
+	# enable running new plugins = yes
+	# check for new plugins every = 60
+	# slabinfo = no
+	# fping = yes
+	# ioping = yes
+	# node.d = yes
+	# python.d = yes
+	# go.d = yes
+	# apps = yes
+	# perf = yes
+	# charts.d = yes
+```
+
+By default, most plugins are enabled, so you don't need to enable them explicity to use their collectors. To enable or
+disable any specific plugin, remove the comment (`#`) and change the boolean setting to `yes` or `no`.
+
+All **external plugins** are managed by [plugins.d](plugins.d/), which provides additional management options.
+
+## Internal plugins
+
+Each of the internal plugins runs as a thread inside the `netdata` daemon. Once this thread has started, the plugin may
+spawn additional threads according to its design.
+
+### Internal plugins API
+
+The internal data collection API consists of the following calls:
+
+```c
+collect_data() {
+    // collect data here (one iteration)
+
+    collected_number collected_value = collect_a_value();
+
+    // give the metrics to Netdata
+
+    static RRDSET *st = NULL; // the chart
+    static RRDDIM *rd = NULL; // a dimension attached to this chart
+
+    if(unlikely(!st)) {
+        // we haven't created this chart before
+        // create it now
+        st = rrdset_create_localhost(
+                "type"
+                , "id"
+                , "name"
+                , "family"
+                , "context"
+                , "Chart Title"
+                , "units"
+                , "plugin-name"
+                , "module-name"
+                , priority
+                , update_every
+                , chart_type
+        );
+
+        // attach a metric to it
+        rd = rrddim_add(st, "id", "name", multiplier, divider, algorithm);
+    }
+    else {
+        // this chart is already created
+        // let Netdata know we start a new iteration on it
+        rrdset_next(st);
+    }
+
+    // give the collected value(s) to the chart
+    rrddim_set_by_pointer(st, rd, collected_value);
+
+    // signal Netdata we are done with this iteration
+    rrdset_done(st);
+}
+```
+
+Of course, Netdata has a lot of libraries to help you also in collecting the metrics. The best way to find your way
+through this, is to examine what other similar plugins do.
+
+## External Plugins
+
+**External plugins** use the API and are managed by [plugins.d](/collectors/plugins.d/README.md).
+
+## Write a custom collector
+
+You can add custom collectors by following the [external plugins documentation](/collectors/plugins.d/README.md).
 
 [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)

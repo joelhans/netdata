@@ -56,10 +56,11 @@ After you make your changes, restart the Agent with `service netdata restart`.
 ## What's next?
 
 Read high-level overviews on how Netdata collects [system metrics](/docs/collect/system-metrics.md), [container
-metrics](/docs/collect/container-metrics.md), and [application metrics](/docs/collect/application-metrics.md).
+metrics](/docs/collect/container-metrics.md), and [service metrics](/docs/collect/service-metrics.md).
 
-If you're already collecting all metrics from your systems, containers, and applications, it's time to move into
-Netdata's visualization features. [View all your nodes at a glance](/docs/visualize/view-all-nodes.md) or learn how to
-[interact with dashboards and charts](/docs/visualize/interact-dashboards-charts.md).
+If you're already collecting all metrics from your systems, containers, services, and applications, it's time to move
+into Netdata's visualization features. Learn how to [interact with dashboards and
+charts](/docs/visualize/interact-dashboards-charts.md), or explore Netdata's robust [alarm
+functionality](/docs/monitor/view-active-alarms.md).
 
 [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcollect%2Fenable-configure&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)

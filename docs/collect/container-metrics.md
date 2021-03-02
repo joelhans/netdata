@@ -7,8 +7,8 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/con
 
 # Collect container metrics with Netdata
 
-Thanks to close integration with Linux cgroups and the virtual files it maintains under `/sys/fs/cgroup`, Netdata can
-monitor the health, status, and resource utilization of many different types of Linux containers.
+Thanks to close integration with Linux cgroups and the virtual files it maintains under `/sys/fs/cgroup`, Netdata
+monitors the health, status, and resource utilization of many different types of Linux containers.
 
 Netdata uses [cgroups.plugin](/collectors/cgroups.plugin/README.md) to poll `/sys/fs/cgroup` and convert the raw data
 into human-readable metrics and meaningful visualizations. Through cgroups, Netdata is compatible with **all Linux
@@ -50,7 +50,7 @@ jobs:
 Netdata then collects metrics from the container itself, but also dozens [MySQL-specific
 metrics](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mysql#charts) as well.
 
-### Collect metrics from applications running in Docker containers
+### Collect metrics from applications/services running in Docker containers
 
 You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and
 configure](/docs/collect/enable-configure.md) procedures apply whether an application runs on the host system or inside
@@ -59,8 +59,8 @@ a container. You may need to configure the target endpoint if it's not the appli
 Netdata can even [run in a Docker container](/packaging/docker/README.md) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
-See our [application metrics doc](/docs/collect/application-metrics.md) for details about Netdata's application metrics
-collection capabilities.
+See our [service metrics doc](/docs/collect/service-metrics.md) for details about Netdata's service metric collection
+capabilities.
 
 ## Collect Kubernetes metrics
 
@@ -90,10 +90,8 @@ with Netdata_](https://learn.netdata.cloud/guides/monitor/kubernetes-k8s-netdata
 
 ## What's next?
 
-Netdata is capable of collecting metrics from hundreds of applications, such as web servers, databases, messaging
-brokers, and more. See more in the [application metrics doc](/docs/collect/application-metrics.md).
-
-If you already have all the information you need about collecting metrics, move into Netdata's meaningful visualizations
-with [viewing all nodes at a glance](/docs/visualize/view-all-nodes.md).
+Netdata is capable of collecting metrics from hundreds of services that make up web application stacks, such as web
+servers, databases, messaging brokers, and more. See more in the [service metrics
+doc](/docs/collect/service-metrics.md).
 
 [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcollect%2Fcontainer-metrics&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
