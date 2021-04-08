@@ -1,0 +1,60 @@
+---
+title: "Customize the standard dashboard"
+description: ""
+type: how-to
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/pick-timeframes.mdx
+---
+
+# Customize the standard dashboard
+
+Netdata stores information about individual charts in the `dashboard_info.js` file. This file includes section and
+subsection headings, descriptions, colors, titles, tooltips, and other information for Netdata to render on the
+dashboard.
+
+For example, here is how `dashboard_info.js` defines the **System Overview** section.
+
+```javascript
+netdataDashboard.menu = {
+  'system': {
+    title: 'System Overview',
+    icon: '<i class="fas fa-bookmark"></i>',
+    info: 'Overview of the key system metrics.'
+  },
+```
+
+If you want to customize this information, you should avoid editing `dashboard_info.js` directly. These changes are not
+persistent; Netdata will overwrite the file when it's updated. Instead, you should create a new file with your
+customizations.
+
+We created an example file at `dashboard_info_custom_example.js`. You can copy this to a new file with a name of your
+choice in the `web/` directory. This directory changes based on your operating system and installation method. If you're
+on a Linux system, it should be at `/usr/share/netdata/web/`.
+
+```shell
+cd /usr/share/netdata/web/
+sudo cp dashboard_info_custom_example.js your_dashboard_info_file.js
+```
+
+Edit the file with your customizations. For example:
+
+```javascript
+customDashboard.menu = {
+  system: {
+    title: "Testing, testing, 1 2 3",
+    icon: '<i class="fas fa-thumbs-up"></i>',
+    info: "This is overwritten info for the system overview section!"
+  }
+};
+```
+
+Finally, tell Netdata where you placed your customization file by replacing `your_dashboard_info_file.js` below.
+
+```conf
+[web]
+ custom dashboard_info.js = your_dashboard_info_file.js
+```
+
+Once you restart Netdata, refresh the dashboard to find your custom configuration:
+
+![Screenshot of overwritten text from dashboard_info.js
+file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-11e9-9578-869753bec39c.png)
