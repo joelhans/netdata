@@ -1,20 +1,43 @@
 ---
 title: "Customize the standard dashboard"
-description: ""
+description: "Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more."
 type: how-to
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/customize.mdx
 ---
 
+# Customize the standard dashboard
+
+While the [Netdata dashboard](/docs/dashboards/dashboards-charts.mdx) comes preconfigured with hundreds of charts and
+thousands of metrics, you may want to alter your experience based on a particular use case or preferences.
 
 ## Dashboard settings
 
+To change dashboard settings, click the on the **settings** icon (![Import
+icon](https://raw.githubusercontent.com/netdata/netdata-ui/98e31799c1ec0983f433537ff16d2ac2b0d994aa/src/components/icon/assets/gear.svg))
+in the top panel.
+
+These settings only affect how the dashboard behaves in your browser. They take effect immediately and are permanently
+saved to browser local storage (except the refresh on focus / always option). Some settings are applied immediately, and
+others are only reflected after the dashboard is refreshed, which happens automatically.
+
 ### Change chart legend position
+
+Find this setting under the **Visual** tab. By default, Netdata places the [legend of
+dimensions](/docs/dashboards/charts-dimensions-contexts-families.mdx#dimensions) _below_ charts. Click this toggle to
+move the legend to the _right_ of charts.
+
+### Change theme
+
+Find this setting under the **Visual** tab. Choose between Dark (the default) and White.
 
 ## Customize the standard dashboard
 
 Netdata stores information about individual charts in the `dashboard_info.js` file. This file includes section and
 subsection headings, descriptions, colors, titles, tooltips, and other information for Netdata to render on the
 dashboard.
+
+One common use case for customizing the standard dashboard is adding internal "documentation" a section or specific
+chart that can then be read by anyone with access to that dashboard.
 
 For example, here is how `dashboard_info.js` defines the **System Overview** section.
 
@@ -27,39 +50,38 @@ netdataDashboard.menu = {
   },
 ```
 
-If you want to customize this information, you should avoid editing `dashboard_info.js` directly. These changes are not
-persistent; Netdata will overwrite the file when it's updated. Instead, you should create a new file with your
-customizations.
+If you want to customize this information, use the example `dashboard_info_custom_example.js` as a starting point.
+First, navigate to the web server's directory. If you're on a Linux system, this should be at `/usr/share/netdata/web/`.
+Copy the example file, then ensure that its permissions match the rest of the web server, which is `netdata:netdata` by
+default.
 
-We created an example file at `dashboard_info_custom_example.js`. You can copy this to a new file with a name of your
-choice in the `web/` directory. This directory changes based on your operating system and installation method. If you're
-on a Linux system, it should be at `/usr/share/netdata/web/`.
-
-```shell
+```bash
 cd /usr/share/netdata/web/
 sudo cp dashboard_info_custom_example.js your_dashboard_info_file.js
+sudo chown netdata:netdata your_dashboard_info_file.js
 ```
 
-Edit the file with your customizations. For example:
+Edit the file with customizations to the `title`, `icon`, and `info` fields. Replace the string after `fas fa-` with any
+icon from [Font Awesome](https://fontawesome.com/cheatsheet) to customize the icons that appear throughout the
+dashboard.
 
-```javascript
-customDashboard.menu = {
-  system: {
-    title: "Testing, testing, 1 2 3",
-    icon: '<i class="fas fa-thumbs-up"></i>',
-    info: "This is overwritten info for the system overview section!"
-  }
-};
-```
-
-Finally, tell Netdata where you placed your customization file by replacing `your_dashboard_info_file.js` below.
+Save the file, then navigate to your [Netdata config directory](/docs/configure/nodes.md) to edit `netdata.conf`. Add
+the following line to the `[web]` section to tell Netdata where to find your custom configuration.
 
 ```conf
 [web]
- custom dashboard_info.js = your_dashboard_info_file.js
+    custom dashboard_info.js = your_dashboard_info_file.js
 ```
 
-Once you restart Netdata, refresh the dashboard to find your custom configuration:
+Reload your browser tab to see your custom configuration.
 
-![Screenshot of overwritten text from dashboard_info.js
-file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-11e9-9578-869753bec39c.png)
+## What's next?
+
+If you're keen on continuing to customize your Netdata experience, check out our docs on [building new custom
+dashboards](/docs/dashboards/custom-dashboards.mdx) with HTML, CSS, and JavaScript.
+
+### Further reading & related information
+
+- [Web server reference](/docs/dashboards/reference-web-server.mdx)
+
+[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fdashboards%2Fcustomize&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
