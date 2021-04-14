@@ -5,6 +5,8 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/a-github-st
 
 # A GitHub star is important
 
+Adding a test edit.
+
 **GitHub stars** allow Netdata to expand its reach, its community, especially attract people with skills willing to
 contribute to it.
 
