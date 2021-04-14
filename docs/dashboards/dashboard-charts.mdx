@@ -1,6 +1,6 @@
 ---
 title: "Dashboard and charts"
-description: ""
+description: "Learn how to navigate Netdata's dashboard and charts to start exploring, "
 type: explanation
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/dashboard-charts.mdx
 ---
@@ -21,9 +21,10 @@ Netdata's dashboard and charts.
 Netdata's dashboard can be broken down into four key areas:
 
 1. [Charts and sections](#charts-and-sections)
-2. Menu
-3. Time & date picker
-4. Netdata Cloud functionality: Spaces, War Rooms, and visited nodes
+2. [Menu/submenus](#menu-submenus)
+3. [Time & date picker](#time-date-picker)
+4. [Replicated nodes panel](#replicated-nodes-panel)
+4. [Netdata Cloud functionality](#netdata-cloud-functionality)
 
 ![Annotated screenshot of the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/101509403-f7e59400-3935-11eb-9abd-cbecfa3ee49a.png)
@@ -31,7 +32,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/101509403-f7e59400-
 ### Charts and sections
 
 The dashboard is a single page with many charts, which are automatically organized into **sections**, such as **System
-Overview**, **CPU**, **Disk**, and more. Inside each section you'll find a number of charts, broken down into
+Overview**, **CPU**, **Disk**, and more. Inside each section, you'll find a number of charts, broken down into
 [contexts](/docs/dashboards/chart-dimensions-contexts-families.mdx#contexts) and
 [families](/docs/dashboards/chart-dimensions-contexts-families.mdx#families).
 
@@ -40,76 +41,61 @@ Here's an example of the **Memory** section on a Linux desktop system.
 ![Screenshot of the Memory section of the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/101508423-e354cc00-3934-11eb-9b33-3ad57a5988b4.png)
 
-
-
 Learn more about the [anatomy of charts](#charts) below, or skip ahead to the basics of [interacting with
-charts](/docs/dashboards/interact-charts.mdx), such as panning through time, zooming in, or highlighting timeframes to 
-
-
-
-All sections and their associated charts appear on a single page, so all you need to do to view different sections is
-scroll up and down. But it's usually quicker to use the [menus](#metrics-menus).
+charts](/docs/dashboards/interact-charts.mdx), such as panning through time, zooming in, or highlighting timeframes to
+help you troubleshoot anomalies.
 
 ### Menus
 
-**Metrics menus** appears on the right-hand side of the local Agent dashboard. Netdata generates a menu for each
-section, and menus link to the section they're associated with.
+The dashboard features a **menu** on the right-hand side, which is automatically populated with text and a link to every
+section. Most metrics menu items will contain several **submenu** items, which oftentimes link to "subsections" of
+charts. For example, the **network** submenu item links to a group of charts for system-wide network monitoring.
 
-![A screenshot of metrics menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
+![A screenshot of metrics
+menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
 
-Most metrics menu items will contain several **submenu** entries, which represent any
-[families](/web/README.md#families) from that section. Netdata automatically
-generates these submenu entries.
-
-Here's a **Disks** menu with several submenu entries for each disk drive and
-partition Netdata recognizes.
+Some submenu items link to the various [families](/docs/dashboards/chart-dimensions-contexts-families.mdx#families)
+Netdata automatically creates for multiple instances of a monitored resource. For example, a **Disks** menu with several
+submenu entries for each disk drive and partition.
 
 ![Screenshot of some metrics
 submenus](https://user-images.githubusercontent.com/1153921/80834697-11577e00-8ba6-11ea-979c-92fd19cdb480.png)
 
 ### Time & date picker
 
-The local dashboard features a time & date picker to help you visualize specific timeframes of historical metrics. The
-picker chooses an appropriate default to always show per-second granularity based on the width of your browser's
-viewport.
+The dashboard features a time & date picker to help you visualize specific timeframes of historical metrics. The picker
+chooses an appropriate default to always show per-second granularity based on the width of your browser's viewport.
 
-![The time & date picker in the local Agent
-dashboard](https://user-images.githubusercontent.com/1153921/101507784-2c585080-3934-11eb-9d6e-eff30b8553e4.png)
+See the doc on [picking timeframes](/docs/dashboards/pick-timeframes.mdx) for more details.
 
-Use the Quick Selector to show metrics from the last 5 minutes, 15 minutes, 30 minutes, 2 hours, 6 hours, or 12 hours.
+### Replicated Nodes panel
 
-Beneath the Quick Selector is an input field and dropdown you use in combination to select a specific timeframe of
-minutes, hours, days, or months. Enter a number and choose the appropriate unit of time.
+If you're using [streaming](/streaming/README.md), both the parent and child nodes appear in the Replicated Nodes panel,
+which appears on the left-hand side of the dashboard. Click either link to switch between the various dashboards for
+your streaming-enabled nodes.
 
-Use the calendar to select multiple days. Click on a date to begin the timeframe selection, then an ending date. 
+![Switching between parent and child streaming
+nodes](https://user-images.githubusercontent.com/1153921/110043346-761ec000-7d04-11eb-8e58-77670ba39161.gif)
 
-Click **Apply** to re-render all visualizations with new metrics data, or **Clear** to restore the default timeframe.
+Show or hide this panel using the **hamburger** icon (![Export
+icon](https://raw.githubusercontent.com/netdata/netdata-ui/master/src/components/icon/assets/hamburger.svg)) next to the
+Netdata logo.
 
-[Increase the metrics retention policy](/docs/store/change-metrics-storage.md) for your node to see more historical
-timeframes.
+### Netdata Cloud functionality
 
-### Cloud menus (Spaces, War Rooms, and Visited nodes)
+Any dashboard can connect to a Netdata Cloud account to enable additional functionality, such as quickly navigating to a
+[War Room](https://learn.netdata.cloud/docs/cloud/war-rooms) or moving between recently-visited dashboards.
 
-The dashboard also features a menu related to Netdata Cloud functionality. You can view your existing Spaces or create
-new ones via the left vertical column of boxes. This menu also displays the name of your current Space, shows a list of
-any War Rooms you've added you your Space, and lists any notes you recently visited via their Agent dashboards. Click on
-a War Room's name to jump to the Netdata Cloud web interface.
+When enabled, click on any of the War Room or Spaces to open Netdata Cloud in a new tab and jump to that location.
 
-![A screenshot of the Cloud
-menus](https://user-images.githubusercontent.com/1153921/80837210-3f8b8c80-8bab-11ea-9c75-128c2d823ef8.png)
-
-If you want to know more about how Cloud populates this menu, and the Agent-Cloud integration at a high level, see our
-document on [using the Agent with Netdata Cloud](/docs/agent-cloud.md).
-
-
+Jump over to the [Netdata Cloud docs](https://learn.netdata.cloud/docs/cloud/) for more details on how and why you would choose to sign up and monitor multiple nodes from a single interface.
 
 ## Charts
 
 A **chart** is an individual, interactive, always-updating graphic displaying one or more collected/calculated metrics.
-Charts are generated by [collectors](/collectors/README.md). 
+Charts are generated by [collectors](/collectors/README.md).
 
-Here's the system CPU chart, the first chart displayed on the standard
-dashboard:
+Here's the system CPU chart, the first chart displayed on the standard dashboard:
 
 ![Screenshot of the system CPU chart in the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/62720972-0b8a8e80-b9c0-11e9-930b-4829f7b17cfd.png)
@@ -118,7 +104,9 @@ Netdata displays a chart's name in parentheses above the chart. For example, if 
 you'll see the label: **Total CPU utilization (system.cpu)**. In this case, the chart's name is `system.cpu`. Netdata
 derives the name from the chart's [context](#contexts).
 
-### Descriptions
+### 
+
+### Description
 
 Many charts come with a short description of what dimensions the chart is displaying and why they matter.
 
@@ -133,6 +121,7 @@ For example, here's the description that accompanies the **Memory Page Faults (m
 If you're new to monitoring and troubleshooting, we recommend you spend some time reading these descriptions to learn
 more about why you might care about something strange happening on a given chart and what you should do next.
 
+###
 
 ### Positive and negative values on charts
 
@@ -149,8 +138,18 @@ negative._
 
 Netdata charts automatically zoom vertically, to visualize the variation of each metric within the visible timeframe.
 
-![Animated GIF showing the auso-scaling Y
+![Animated GIF showing the auto-scaling Y
 axis](https://user-images.githubusercontent.com/1153921/80838276-8084a080-8bad-11ea-8167-8d5ab2fb1be1.gif)
 
 _A zero-based `stacked` chart, automatically switches to an auto-scaled `area` chart when a single dimension is
 selected._
+
+## What's next?
+
+
+
+### Further reading & related information
+
+- [Interact with charts](/docs/dashboards/interact-charts.mdx)
+
+[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fdashboards%2Fdashboard-charts&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
