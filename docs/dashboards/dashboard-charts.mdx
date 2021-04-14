@@ -1,36 +1,71 @@
 ---
-title: "Dashboards and charts"
+title: "Dashboard and charts"
 description: ""
 type: explanation
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/dashboards-charts.mdx
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/dashboard-charts.mdx
 ---
 
-## The Netdata dashboard
+# Dashboard and charts
 
-Netdata's dashboard can be broken down into three key areas:
+As soon as you [install Netdata](/docs/installation.mdx), it autodetects hardware, OS, containers, services, and
+applications running on your node and builds a preconfigured dashboard on a single, scrollable webpage. This page
+features hundreds of charts, which are also preconfigured to save you time from learning a query language, all stacked
+on top of one another to encourage exploration and help you visually identify connections between the metrics visualized
+in different charts.
 
-1.  [**Sections**](#sections)
-2.  [**Time & date picker**](#time--date-picker)
-3.  [**Metrics menus/submenus**](#metrics-menus)
-4.  [**Netdata Cloud menus: Spaces, War Rooms, and Visited nodes)**](#cloud-menus-spaces-war-rooms-and-visited-nodes)
+To maximize your post-installation Netdata experience, it's important to understand the features and functionality of
+Netdata's dashboard and charts.
 
-![Annotated screenshot of the local Agent
+## The dashboard
+
+Netdata's dashboard can be broken down into four key areas:
+
+1. [Charts and sections](#charts-and-sections)
+2. Menu
+3. Time & date picker
+4. Netdata Cloud functionality: Spaces, War Rooms, and visited nodes
+
+![Annotated screenshot of the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/101509403-f7e59400-3935-11eb-9abd-cbecfa3ee49a.png)
 
-### Sections
+### Charts and sections
 
-Netdata is broken up into multiple **sections**, such as **System Overview**,
-**CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](/web/README.md#contexts) and
-[families](/web/README.md#families).
+The dashboard is a single page with many charts, which are automatically organized into **sections**, such as **System
+Overview**, **CPU**, **Disk**, and more. Inside each section you'll find a number of charts, broken down into
+[contexts](/docs/dashboards/chart-dimensions-contexts-families.mdx#contexts) and
+[families](/docs/dashboards/chart-dimensions-contexts-families.mdx#families).
 
-An example of the **Memory** section on a Linux desktop system.
+Here's an example of the **Memory** section on a Linux desktop system.
 
 ![Screenshot of the Memory section of the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/101508423-e354cc00-3934-11eb-9b33-3ad57a5988b4.png)
 
+
+
+Learn more about the [anatomy of charts](#charts) below, or skip ahead to the basics of [interacting with
+charts](/docs/dashboards/interact-charts.mdx), such as panning through time, zooming in, or highlighting timeframes to 
+
+
+
 All sections and their associated charts appear on a single page, so all you need to do to view different sections is
 scroll up and down. But it's usually quicker to use the [menus](#metrics-menus).
+
+### Menus
+
+**Metrics menus** appears on the right-hand side of the local Agent dashboard. Netdata generates a menu for each
+section, and menus link to the section they're associated with.
+
+![A screenshot of metrics menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
+
+Most metrics menu items will contain several **submenu** entries, which represent any
+[families](/web/README.md#families) from that section. Netdata automatically
+generates these submenu entries.
+
+Here's a **Disks** menu with several submenu entries for each disk drive and
+partition Netdata recognizes.
+
+![Screenshot of some metrics
+submenus](https://user-images.githubusercontent.com/1153921/80834697-11577e00-8ba6-11ea-979c-92fd19cdb480.png)
 
 ### Time & date picker
 
@@ -53,23 +88,6 @@ Click **Apply** to re-render all visualizations with new metrics data, or **Clea
 [Increase the metrics retention policy](/docs/store/change-metrics-storage.md) for your node to see more historical
 timeframes.
 
-### Metrics menus
-
-**Metrics menus** appears on the right-hand side of the local Agent dashboard. Netdata generates a menu for each
-section, and menus link to the section they're associated with.
-
-![A screenshot of metrics menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
-
-Most metrics menu items will contain several **submenu** entries, which represent any
-[families](/web/README.md#families) from that section. Netdata automatically
-generates these submenu entries.
-
-Here's a **Disks** menu with several submenu entries for each disk drive and
-partition Netdata recognizes.
-
-![Screenshot of some metrics
-submenus](https://user-images.githubusercontent.com/1153921/80834697-11577e00-8ba6-11ea-979c-92fd19cdb480.png)
-
 ### Cloud menus (Spaces, War Rooms, and Visited nodes)
 
 The dashboard also features a menu related to Netdata Cloud functionality. You can view your existing Spaces or create
@@ -87,9 +105,8 @@ document on [using the Agent with Netdata Cloud](/docs/agent-cloud.md).
 
 ## Charts
 
-A **chart** is an individual, interactive, always-updating graphic displaying
-one or more collected/calculated metrics. Charts are generated by
-[collectors](/collectors/README.md). 
+A **chart** is an individual, interactive, always-updating graphic displaying one or more collected/calculated metrics.
+Charts are generated by [collectors](/collectors/README.md). 
 
 Here's the system CPU chart, the first chart displayed on the standard
 dashboard:
@@ -97,10 +114,9 @@ dashboard:
 ![Screenshot of the system CPU chart in the Netdata
 dashboard](https://user-images.githubusercontent.com/1153921/62720972-0b8a8e80-b9c0-11e9-930b-4829f7b17cfd.png)
 
-Netdata displays a chart's name in parentheses above the chart. For example, if
-you navigate to the system CPU chart, you'll see the label: **Total CPU
-utilization (system.cpu)**. In this case, the chart's name is `system.cpu`.
-Netdata derives the name from the chart's [context](#contexts).
+Netdata displays a chart's name in parentheses above the chart. For example, if you navigate to the system CPU chart,
+you'll see the label: **Total CPU utilization (system.cpu)**. In this case, the chart's name is `system.cpu`. Netdata
+derives the name from the chart's [context](#contexts).
 
 ### Descriptions
 
