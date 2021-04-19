@@ -11,10 +11,11 @@ Because Netdata montitoring and _troubleshooting_ platform, a dashboard with rea
 charts is essential.
 
 As soon as you [install Netdata](/docs/get-started.mdx), it autodetects hardware, OS, containers, services, and
-applications running on your node and builds a preconfigured dashboard on a single, scrollable webpage. This page
-features hundreds of charts, which are also preconfigured to save you time from learning a query language, all stacked
-on top of one another to encourage exploration and help you visually identify connections between the metrics visualized
-in different charts.
+applications running on your node and builds a preconfigured dashboard on a single, scrollable webpage served by an [internal web server](/docs/dashboard/reference-web-server.mdx).
+
+This page features hundreds of charts, which are also preconfigured to save you time from learning a query language, all
+stacked on top of one another to encourage exploration and help you visually identify connections between the metrics
+visualized in different charts.
 
 To maximize your post-installation Netdata experience, it's important to understand the core concepts and features of
 Netdata's dashboard.
@@ -27,8 +28,9 @@ Access Netdata's dashboard by navigating to `http://NODE:19999` in your browser,
 ![Animated GIF of navigating to the
 dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8b94-11ea-8b17-1b770a2abaa9.gif)
 
-Many features of the internal web server that serves the dashboard are [configurable](/web/server/README.md), including
-the listen port, enforced TLS, and even disabling the dashboard altogether.
+Many features of the internal web server that serves the dashboard are
+[configurable](/docs/dashboard/reference-web-server.mdx), including the listen port, enforced TLS, and even disabling
+the dashboard altogether.
 
 ## Sections and menus
 
@@ -103,3 +105,11 @@ organizes its dashboard and operates [alarms](/docs/monitor/configure-alarms.md)
 
 - [HTTP API](/web/api/README.md)
 - [Custom dashboards](/web/gui/custom/README.md)
+- Dashboard
+  - **[How the dashboard works](/docs/dashboard/how-dashboard-works.mdx)**
+  - [Interact with charts](/docs/dashboard/interact-charts.mdx)
+  - [Chart dimensions, contexts, and families](/docs/dashboard/dimensions-contexts-families.mdx)
+  - [Select timeframes to visualize](/docs/dashboards/select-timeframes.mdx)
+  - [Import, export, and print a snapshot](/docs/dashboard/import-export-print-snapshot.mdx)
+  - [Customize the standard dashboard](/docs/dashboard/customize.mdx)
+  - [Web server reference](/docs/dashboard/reference-web-server.mdx)
